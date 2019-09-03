@@ -1,0 +1,117 @@
+﻿@model IEnumerable<GateBoys.Models.Order>
+
+@{
+    /**/
+
+    ViewBag.Title = "getMonthSales";
+}
+<style>
+    .ui-datepicker-calendar {
+        display: none;
+    }
+</style>
+<h2>getMonthSales</h2>
+
+@if (ViewBag.noOrders != null)
+{
+
+    <div class="col-md-3">
+        <div class="alert alert-danger alert-dismissable">
+            <button aria-hidden="true" data-dismiss="alert" class="close" type="button"> × </button>
+            @ViewBag.noOrders
+        </div>
+    </div>
+}
+@using (Html.BeginForm("getMonthSales", "orders", FormMethod.Get))
+{
+    <div class="col-md-2 col-md-offset-10 col-sm-2" style="align-content:flex-start">
+        <div class="input-group">
+            <input type="text" class="form-control datepicker" placeholder="yyyy/mm" name="yearMonth" required value="@ViewBag.yearMonth">
+            <span class="input-group-btn">
+                <button class="btn btn-primary" type="submit">
+                    <i class="glyphicon glyphicon-search"></i>
+                </button>
+            </span>
+        </div>
+    </div>
+}
+<table class="timetable_sub">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.OrderNumber)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.username)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.OrderDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.orderedItems)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.OrderQuantity)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DeliveryAddress)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TotalOrderCost)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Cell)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AssignedDriver)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Status)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+
+    @foreach (var item in Model)
+    {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.OrderNumber)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.username)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.OrderDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.orderedItems)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.OrderQuantity)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DeliveryAddress)
+        </td>
+
+        <td>
+            @Html.DisplayFor(modelItem => item.TotalOrderCost)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Cell)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AssignedDriver)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Status)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id = item.OrderId }) |
+            @Html.ActionLink("Details", "Details", new { id = item.OrderId }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.OrderId })
+        </td>
+    </tr>
+    }
+
+</table>

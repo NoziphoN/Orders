@@ -1,0 +1,112 @@
+﻿@model GateBoys.Models.Order
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>printOrder</title>
+
+    <link href="~/style/css/style.css" rel="stylesheet" />
+</head>
+<body>
+    <div>
+        <div class="row">
+            <div class="col-md-4">
+                <img src="~/style/images/logo.png" alt=" " />
+            </div>
+        </div>
+    </div>
+    <br />
+    <h4>Order</h4>
+<hr />
+    <table class="table-bordered table table-striped" style="width:100%">
+        <tr>
+            <td>
+                @Html.DisplayNameFor(model => model.OrderNumber)
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.OrderNumber)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                @Html.DisplayNameFor(model => model.OrderQuantity)
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.OrderQuantity)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                @Html.DisplayNameFor(model => model.TotalOrderCost)
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.TotalOrderCost)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                @Html.DisplayNameFor(model => model.Status)
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.Status)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                @Html.DisplayNameFor(model => model.OrderDate)
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.OrderDate)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                @Html.DisplayNameFor(model => model.DeliveryAddress)
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.DeliveryAddress)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                @Html.DisplayNameFor(model => model.username)
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.username)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                @Html.DisplayNameFor(model => model.orderedItems)
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.orderedItems)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                @Html.DisplayNameFor(model => model.Cell)
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.Cell)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                @Html.DisplayNameFor(model => model.AssignedDriver)
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.AssignedDriver)
+            </td>
+        </tr>
+    </table>
+    <div>
+    </div>
+</body>
+</html>
